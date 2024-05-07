@@ -1,0 +1,2 @@
+# IT-Speks
+Cariks, Travinovs
