@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Dominējošas krāsas - balta, zaļa */
+
 :root{
     --main-gray: #F5F6F7;
     --main-color: #6e8ae8;
@@ -9,6 +11,7 @@
     --border: .1rem solid rgba(0,0,0,10%);
     --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,10%);
     --radius: .5rem;
+    --tr20: 1;
 }
 
 *{
@@ -27,9 +30,14 @@
     color: white;
 }
 
+body, html{
+    overflow-x: hidden;
+}
+
 html{
     scroll-behavior: smooth;
     scroll-padding-top: 9rem;
+    
 }
 
 section{
@@ -42,7 +50,7 @@ header{
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 4;
     box-shadow: var(--box-shadow);
     display: flex;
     justify-content: space-between;
@@ -51,19 +59,26 @@ header{
 }
 
 header .logo{
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: var(--black);
 }
 
 nav a{
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: var(--light-color);
-    margin-left: 2rem;
+    padding: 8px 10px;
+    margin: 0 5px;
 }
 
 nav a:hover{
     color: var(--main-color);
+}
+
+.current{
+    color: var(--main-color);
+    border-radius: 5px;
+    /* background-color: #ebebeb; */
 }
 
 .navbar{
@@ -78,4 +93,67 @@ nav a:hover{
     padding-top: 7rem;
     background: var(--bg);
     position: relative;
+}
+
+footer h3{
+    text-align: center;
+    align-items: center;
+    font-weight: 300;
+    font-size: 1rem;
+    padding-top: 1rem;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#bilde-sekcija {
+    position: relative;
+    height: 70vh;
+    overflow: hidden; /* Ensure the gradient is contained within the section */
+}
+
+#bilde-sekcija::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 2; /* Ensure it stays behind the gradient */
+}
+
+
+#bilde-sekcija::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, rgba(238, 118, 82, var(--tr20)), rgba(231, 60, 126, var(--tr20)), rgba(35, 165, 213, var(--tr20)), rgba(35, 213, 171, var(--tr20)));
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    z-index: 3;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }

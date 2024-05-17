@@ -1,4 +1,5 @@
 <?php
+    $page = "pieteiksanas";
     require "header.php";
 ?>
 

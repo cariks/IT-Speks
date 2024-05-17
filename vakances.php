@@ -1,13 +1,14 @@
 <?php
+    $page = "vakances";
     require "header.php";
 ?>
 
 <section>
-    tetstetstestsetsts
     <br>
     <br>
     <br>
-    rerere
+    <br>
+    Vakances sadala
 </section>
 
 <?php
