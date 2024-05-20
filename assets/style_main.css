@@ -4,7 +4,8 @@
 
 :root{
     --main-gray: #F5F6F7;
-    --main-color: #6e8ae8;
+    --main-dark: #2d2d2d;
+    --main-color: #3b82f6;
     --black: #555;
     --light-color: #777;
     --bg: #e9f3fc;
@@ -32,6 +33,16 @@
 
 body, html{
     overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body{
+    background-color: #f9f9f9;
+}
+
+body.dark {
+    background-color: #1a202c;
+    color: #a0aec0;
 }
 
 html{
@@ -44,7 +55,7 @@ section{
     padding: 2rem 5%;
 }
 
-header{
+/* header{
     background: var(--main-gray);
     position: fixed;
     top: 0;
@@ -56,7 +67,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 1.3rem 3%;
-}
+} */
 
 header .logo{
     font-size: 1.4rem;
@@ -90,9 +101,13 @@ nav a:hover{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    padding-top: 7rem;
+    padding-top: 2.5rem;
     background: var(--bg);
     position: relative;
+}
+
+#sakums h1{
+    font-weight: bold;
 }
 
 footer h3{
